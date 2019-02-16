@@ -45,18 +45,14 @@ def game(switch,num_doors=3):
     # If 'choice' has a car, leave one door closed
     i = 0
     while len(doors) > 2:
-        #print("length: " + str(len(doors)))
         door = doors[i]
         if door == choice or door.hasCar():
             i += 1
         else:
             doors.remove(door)
-
-    print(doors)
     
     # Switch doors if instructed to do so
     if switch:
-        #print((doors.index(choice)+1)%2)
         choice = doors[(doors.index(choice)+1)%2]
 
     return choice.hasCar()
